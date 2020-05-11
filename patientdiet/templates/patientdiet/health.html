@@ -1,0 +1,13 @@
+{% extends 'patientdiet/base.html' %}
+
+{% block  body_block %}
+<h1> hello, you can also provide your health details now for your health to be recommended to you </h1>
+<p> provide our health status below: </p>
+  <form action="{% url 'health_details' %}" method="post">
+	{% csrf_token %}
+	<!-- the as_p modifier tells django to render all the form elements in paragraph format -->
+	{{ form.as_p }}
+	<button name="submit"><b>Add a user profile</b></button>
+	
+</form>
+{% endblock  %}
